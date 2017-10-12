@@ -15,14 +15,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Login Form</title>
   <link rel="stylesheet" href="css/inicio.css">
+  <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
   <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
+    <div id="content">
+        <h id="titulo">¡Bienvenido a Friend Zone!</h>
   <div class="login">
-    <h1>Login to Web App</h1>
-    <form method="post" action="">
-      <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
-      <p><input type="password" name="password" value="" placeholder="Password"></p>
+      <h><img class="logo" src="http://www.fillmurray.com/320/310"></h>
+    <h1>Iniciar Sesión</h1>
+    <form action="/">
+      <p><input type="text" name="username" value="" placeholder="Nombre de usuario"></p>
+      <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
       <p class="remember_me">
         <label>
           <input type="checkbox" name="remember_me" id="remember_me">
@@ -32,9 +36,25 @@
       <p class="submit"><input type="submit" name="commit" value="Login"></p>
     </form>
   </div>
-
-  <div class="login-help">
-    <p>Forgot your password? <a href="#">Click here to reset it</a>.</p>
+  <div class="register">
+    <h1>¡Registrate Ahora!</h1>
+    <form action="/">
+      <p><input type="text" name="nombre" value="" placeholder="Nombre"></p>
+      <p><input type="text" name="apellido" value="" placeholder="Apellido"></p>
+      <p><input type="text" name="username" value="" placeholder="Nombre de usuario"></p>
+      <p><input type="text" name="email" value="" placeholder="Correo"></p>
+      <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
+      <p><input type="password" name="passworConf" value="" placeholder="Confirma Contraseña"></p>
+      
+      <p class="remember_me">
+        <label>
+          <input type="checkbox" name="remember_me" id="remember_me">
+          Remember me on this computer
+        </label>
+      </p>
+      <p class="submit"><input type="submit" name="commit" value="Login"></p>
+    </form>
   </div>
+    </div>
 </body>
 </html>
