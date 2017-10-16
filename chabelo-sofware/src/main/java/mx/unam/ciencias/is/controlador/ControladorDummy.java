@@ -17,4 +17,14 @@ public class ControladorDummy {
     public String inicio(){
         return "inicio";   
     }
+    
+    @RequestMapping(value="/perfilDeUsuario", method = RequestMethod.GET)
+    public String perfilDeUsuario(){
+        return "perfilDeUsuario";   
+    }
+    
+    @RequestMapping(value="/consultaDeUnPerfil", method = RequestMethod.GET)
+    public String consultaDeUnPerfil(){
+        return "consultaDeUnPerfil";   
+    }
 }
