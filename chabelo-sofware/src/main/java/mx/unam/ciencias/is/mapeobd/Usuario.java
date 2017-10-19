@@ -25,7 +25,7 @@ import javax.persistence.OneToMany;
 @Table(name="Usuario")
 public class Usuario {
     @Id
-    @Column(name = "numbre_usuario")
+    @Column(name = "nombre_usuario")
     private int varNombre_Usuario;
     @Column(name = "password")
     private String varPassword;

@@ -31,6 +31,6 @@ public class IniciarSesion {
         
         String u = principal.getName();
         model.addAttribute("username", u);
-        return new ModelAndView("PerfilDeUsuario",model);
+        return new ModelAndView("perfilDeUsuario",model);
     }
 }

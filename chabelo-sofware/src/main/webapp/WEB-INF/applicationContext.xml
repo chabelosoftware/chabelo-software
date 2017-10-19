@@ -76,7 +76,7 @@
         <!--se configura el conportameinto de el log -->
         <security:form-login login-page="/"
                              authentication-failure-url="/?login_error=1"
-                             default-target-url="/perfilDeUsuario"
+                             default-target-url="/sesion/inicioU"
                              always-use-default-target="true"/>
         <security:csrf disabled="true"/>
         <security:access-denied-handler error-page="/error403" />
