@@ -27,4 +27,19 @@ public class ControladorDummy {
     public String consultaDeUnPerfil(){
         return "consultaDeUnPerfil";   
     }
+    
+     @RequestMapping(value="/actualizacion", method = RequestMethod.GET)
+    public String actualizacion(){
+        return "actualizacion";   
+    }
+    
+     @RequestMapping(value="/resultadobusqueda", method = RequestMethod.GET)
+    public String resultadobusqueda(){
+        return "resultadobusqueda";   
+    }
+    
+     @RequestMapping(value="/eliminacion", method = RequestMethod.GET)
+    public String eliminacion(){
+        return "eliminacion";   
+    }
 }
