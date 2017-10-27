@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
  *
  * @author gaboptm
  */
+@Controller
 public class IniciarSesion {
     
     @RequestMapping(value="/")

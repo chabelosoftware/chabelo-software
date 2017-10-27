@@ -65,7 +65,7 @@
         <security:intercept-url pattern="/" access="permitAll" />
         <!-- toda peticion con el texto /sesion/ antes de el noombre de la peticion
         solo los que iniciaron sesion pueden acceder -->
-        <security:intercept-url pattern="/chabelo-software/sesion/*" access="isAuthenticated()" />
+        <security:intercept-url pattern="/sesion/*" access="isAuthenticated()" />
         <!--<security:intercept-url pattern="/admin/*" access=" hasRole('ROLE_Admin')" /> -->
         <!--<security:intercept-url pattern="/root/*" access="hasRole('ROLE_Admin')" /> -->
         <!--se configura el conportameinto de el log -->
