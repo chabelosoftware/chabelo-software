@@ -24,7 +24,7 @@
   <div class="login">
       <h><img class="logo" src="http://www.fillmurray.com/320/310"></h>
     <h1>Iniciar Sesión</h1>
-    <form action="/chabelo-software/login" method="POST">
+    <form action="/chabelo-sofware/login" method="POST" class="login-form">
       <p><input type="text" name="username" value="" placeholder="Nombre de usuario"></p>
       <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
       <p class="remember_me">

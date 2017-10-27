@@ -26,7 +26,7 @@ public class IniciarSesion {
         return "inicio";
     }
     
-    @RequestMapping(value="/sesion/inicioU")
+    @RequestMapping(value="/sesion/inicioU", method = RequestMethod.GET)
     public ModelAndView inicioU(HttpServletRequest request,ModelMap model ,Principal principal){
         
         String u = principal.getName();

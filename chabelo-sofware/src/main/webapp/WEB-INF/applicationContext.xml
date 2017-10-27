@@ -2,11 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:security="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-    
-   
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd" >
     
     <!-- Se especifica la ruta del archivo que tendra los datos de la conexión a la BD,
          en este caso el archivo se llama database.properties y se encuentra dentro de 
@@ -26,8 +23,10 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-            <!--<value>mx.unam.ciencias.is.mapeobd.Marcador</value>
-                <value>mx.unam.ciencias.is.mapeobd.Usuario</value>-->
+                <value>mx.unam.ciencias.is.mapeobd.Chatear</value>
+                <value>mx.unam.ciencias.is.mapeobd.Gustos</value>
+                <value>mx.unam.ciencias.is.mapeobd.Mensaje</value>
+                <value>mx.unam.ciencias.is.mapeobd.Usuario</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -42,11 +41,11 @@
     <!--  Se agrega para poder inyectarlo a los Controladores, revisa EjemploController.java
           en el paquete controlador, se esta haciendo uso de @Autowired-->
     <!--Ejemplo para configurar bean-->
-    <!--
-    <bean id="MarcadorDAO" class="mx.unam.ciencias.is.modelo.MarcadorDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
+    <bean id="ChatearDAO" class="mx.unam.ciencias.is.modelo.ChatearDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
+    <bean id="GustosDAO" class="mx.unam.ciencias.is.modelo.GustosDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
+    <bean id="MensajeDAO" class="mx.unam.ciencias.is.modelo.MensajeDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     <bean id="UsuarioDAO" class="mx.unam.ciencias.is.modelo.UsuarioDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
-    -->
-     <!-- SpringSecurity -->
+    
     <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
@@ -55,14 +54,10 @@
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
                            http://www.springframework.org/schema/security
                            http://www.springframework.org/schema/security/spring-security-4.1.xsd">
-
-    
-    
-    
+    <!-- SpringSecurity -->
     <security:http pattern="/css/*" security="none"/>
     <security:http pattern="/imagenes/*" security="none"/>
     <security:http pattern="/js/*" security="none"/>
-    
     
     <!-- aqui se nterceptan as peticiones de nuestra aplicacion-->
     <security:http auto-config='true'>
@@ -70,9 +65,9 @@
         <security:intercept-url pattern="/" access="permitAll" />
         <!-- toda peticion con el texto /sesion/ antes de el noombre de la peticion
         solo los que iniciaron sesion pueden acceder -->
-        <security:intercept-url pattern="/sesion/*" access="isAuthenticated()" />
-       <!-- <security:intercept-url pattern="/admin/*" access=" hasRole('ROLE_Admin')" /> -->
-      <!--  <security:intercept-url pattern="/root/*" access="hasRole('ROLE_Admin')" /> -->
+        <security:intercept-url pattern="/chabelo-software/sesion/*" access="isAuthenticated()" />
+        <!--<security:intercept-url pattern="/admin/*" access=" hasRole('ROLE_Admin')" /> -->
+        <!--<security:intercept-url pattern="/root/*" access="hasRole('ROLE_Admin')" /> -->
         <!--se configura el conportameinto de el log -->
         <security:form-login login-page="/"
                              authentication-failure-url="/?login_error=1"
@@ -91,18 +86,14 @@
             <!--<security:password-encoder hash="bcrypt" />-->
             <security:user-service>
                 <!-- Se da de alta el usuario la contrasenia y el rol-->
-                <security:user name="ElJhon" password="1234" authorities="ROLE_Usuario" />
-                <security:user name="ElPapaJhon" password="1234" authorities="ROLE_Admin" />
-                <security:user name="DonJhon" password="1234" authorities="ROLE_Root" />
+                <security:user name="ElJhon" password="1234" authorities="ROLE_ADMIN" />
+                <security:user name="ElPapaJhon" password="1234" authorities="ROLE_ADMIN" />
+                <security:user name="DonJhon" password="1234" authorities="ROLE_ADMIN" />
                 
             </security:user-service>
             
         </security:authentication-provider>
     </security:authentication-manager>
     </beans>
-
-<!-- SpringSecurity -->
-    
-    
     
 </beans>
