@@ -26,7 +26,7 @@ import javax.persistence.OneToMany;
 public class Usuario {
     @Id
     @Column(name = "nombre_usuario")
-    private int varNombre_Usuario;
+    private String varNombre_Usuario;
     @Column(name = "password")
     private String varPassword;
     @Column(name = "nombre")
@@ -37,6 +37,8 @@ public class Usuario {
     private String varAMaterno;
     @Column(name = "e_mail")
     private String varE_Mail;
+    @Column(name = "rol")
+    private String varRol;
     @OneToMany(mappedBy="varNombre_Usuario")
     private Set<Gustos> varGustos;
     @OneToMany(mappedBy="varNombre_UsuarioR")
@@ -45,11 +47,11 @@ public class Usuario {
     private Set<Chatear> varChatsD;
     
 
-    public int getVarNombre_Usuario() {
+    public String getVarNombre_Usuario() {
         return varNombre_Usuario;
     }
 
-    public void setVarNombre_Usuario(int varNombre_Usuario) {
+    public void setVarNombre_Usuario(String varNombre_Usuario) {
         this.varNombre_Usuario = varNombre_Usuario;
     }
 
@@ -116,4 +118,14 @@ public class Usuario {
     public void setVarChatsD(Set<Chatear> varChatsD) {
         this.varChatsD = varChatsD;
     }
+
+    public String getVarRol() {
+        return varRol;
+    }
+
+    public void setVarRol(String varRol) {
+        this.varRol = varRol;
+    }
+    
+    
 }
