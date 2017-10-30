@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package mx.unam.ciencias.is.controlador;
+import java.security.Principal;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import mx.unam.ciencias.is.modelo.UsuarioDAO;
 import mx.unam.ciencias.is.mapeobd.Usuario;
 import mx.unam.ciencias.is.modelo.GustosDAO;
 import mx.unam.ciencias.is.mapeobd.Gustos;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.servlet.ModelAndView;
 /**
  *
  * @author dewer
@@ -33,7 +36,7 @@ public class crearControlador {
     
     
     @RequestMapping(value="/crearUsuario", method = RequestMethod.GET)
-    public String registraUsuario(HttpServletRequest request){
+    public ModelAndView registraUsuario(HttpServletRequest request,ModelMap model){
         String name = request.getParameter("nombre");
         String lastnameP = request.getParameter("apellidoP");
         String lastnameM = request.getParameter("apellidoM");
@@ -53,21 +56,55 @@ public class crearControlador {
             u.setVarRol("ROLE_ADMIN");
             Usuario_db.guardar(u);
             
-        }
-        return "redirect:/defGustos";
+        }        
+        model.addAttribute("username", user);
+        return new ModelAndView("defGustos",model);
     }
+    
     @RequestMapping(value="/registraGustos" , method = RequestMethod.POST)
     public String registraGustos(HttpServletRequest request){
-        String musique = request.getParameter("choice1");
-        String cinema = request.getParameter("choice2");
-        String games = request.getParameter("choice3");
-        String livres = request.getParameter("choice4");
-        String Sports = request.getParameter("choice5");
-        System.out.println(musique);
-        Gustos u = new Gustos();
-        u.setVarGusto(games);
+        String user = request.getParameter("username");
+        Usuario us = Usuario_db.getUsuario(user);
+        
+        String musique = request.getParameter("choise1");
+        String cinema = request.getParameter("choise2");
+        String games = request.getParameter("choise3");
+        String livres = request.getParameter("choise4");
+        String Sports = request.getParameter("choise5");
+        
+        System.out.println("--------------------------------"+request.getParameter("choice1"));
+        if(musique != null && musique.equals("on")){
+            Gustos g1 = new Gustos();
+            g1.setVarNombre_Usuario(us);
+            g1.setVarGusto("Musica");
+            Gustos_db.guardar(g1);        
+        }
+        if(cinema != null && cinema.equals("on")){
+            Gustos g2 = new Gustos();
+            g2.setVarNombre_Usuario(us);
+            g2.setVarGusto("Peliculas/Series");
+            Gustos_db.guardar(g2);        
+        }
+        if(games != null && games.equals("on")){
+            Gustos g3 = new Gustos();
+            g3.setVarNombre_Usuario(us);
+            g3.setVarGusto("Cine");
+            Gustos_db.guardar(g3);        
+        }
+        if(livres != null && livres.equals("on")){
+            Gustos g4 = new Gustos();
+            g4.setVarNombre_Usuario(us);
+            g4.setVarGusto("Libros");
+            Gustos_db.guardar(g4);        
+        }
+        if(Sports != null && Sports.equals("on")){
+            Gustos g5 = new Gustos();
+            g5.setVarNombre_Usuario(us);
+            g5.setVarGusto("Deportes");
+            Gustos_db.guardar(g5);        
+        }
        
-        return "redirect:/perfilDeUsuario";
+        return "redirect:/";
         
         
     }
