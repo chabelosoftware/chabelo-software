@@ -5,6 +5,7 @@
  */
 package mx.unam.ciencias.is.modelo;
 import mx.unam.ciencias.is.mapeobd.Gustos;
+import mx.unam.ciencias.is.mapeobd.Usuario;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -135,6 +136,33 @@ public class GustosDAO {
         }
         return result;
     }
+    
+    /**
+     * Regresa los gustos con el numbre de usuario dado
+     * @param us objeto usuario del usuario 
+     * @return lista de gustos ligados al usuario dado
+     */
+    public List<Gustos> getGustos(Usuario us){
+        List<Gustos> result= null;
+        Session session = sessionFactory.openSession();
+        Transaction tx=null;
+        try{
+            tx=session.beginTransaction();
+            String hql= "FROM Gustos WHERE varNombre_Usuario = :u";
+            Query query =session.createQuery(hql);
+            query.setParameter("u",us);
+            result=(List<Gustos>)query.list();
+            tx.commit();
+        }catch (Exception e){
+            if(tx != null)
+                tx.rollback();
+            e.printStackTrace();      
+        }finally{
+            session.close();
+        }
+        return result;
+    }
+    
     
     /**
      * Regresa el gusto con el id dado
