@@ -79,7 +79,7 @@ public class UsuarioDAO {
             e.printStackTrace(); 
         }
         finally {
-            //cerramos simpre la sesion
+            //cerramos siempre la sesion
             session.close();
         }
     }
@@ -107,7 +107,7 @@ public class UsuarioDAO {
             e.printStackTrace(); 
         }
         finally {
-            //cerramos simpre la sesion
+            //cerramos siempre la sesion
             session.close();
         }
     }

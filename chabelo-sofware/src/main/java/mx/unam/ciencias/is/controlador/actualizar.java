@@ -45,6 +45,7 @@ public class actualizar {
         String games = request.getParameter("choice3");
         String livres = request.getParameter("choice2");
         String Sports = request.getParameter("choice4");
+        Gustos
         
         if(name!=null){
             u.setVarNombre(name);            
@@ -64,9 +65,9 @@ public class actualizar {
         if(lastnameM!=null){
             u.setVarPassword(password);
         }
-        /*if(Gustos_db.getGustos()==null){
+      /*  if(musique!=null && musique.equals("on") && !Gustos_db. ){
             Gustos g1 = new Gustos();
-            g1.setVarNombre_Usuario(u);
+            g1.setVarNombre_Usuario(us);
             g1.setVarGusto("Musica");
             Gustos_db.guardar(g1);        
         }*/

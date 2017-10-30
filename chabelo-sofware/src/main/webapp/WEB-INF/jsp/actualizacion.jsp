@@ -23,7 +23,7 @@
       <div class="container">
 <div class="col-md-5">
     <div class="form-area">  
-        <form role="form">
+        <form action="/chabelo-sofware/actualizarUsuario role="form">
         <br style="clear:both">
                     <h3 style="margin-bottom: 25px; text-align: center;">Actualiza tus datos</h3>
     				<div class="form-group">
@@ -48,19 +48,19 @@
 						<input type="password" class="form-control" id="confirmacion" name="confirmacion" placeholder="Confirmacion Contrasena" required>
 					</div>
                     <div class="form-group">
-                        <input type="checkbox" id="musica" value="musica"> <label for="musica">Musica</label>
+                        <input type="checkbox" id="musica" name="choice1" value="musica"> <label for="musica">Musica</label>
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" id="libros" value="libros"> <label for="libros">Libros</label>
+                        <input type="checkbox" id="libros" name="choice2" value="libros"> <label for="libros">Libros</label>
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" id="juegos" value="juegos"> <label for="juegos">Videojuegos</label>
+                        <input type="checkbox" id="juegos" name="choice3" value="juegos"> <label for="juegos">Videojuegos</label>
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" id="deportes" value="deportes"> <label for="deportes">Deportes</label>
+                        <input type="checkbox" id="deportes" name="choice4" value="deportes"> <label for="deportes">Deportes</label>
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" id="peliculas" value="peliculas"> <label for="peliculas">Peliculas/Series</label>                   
+                        <input type="checkbox" id="peliculas" name="choice5" value="peliculas"> <label for="peliculas">Peliculas/Series</label>                   
                     </div>
                     
             
