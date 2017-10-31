@@ -20,14 +20,16 @@
         <div class="container">
 	<div class="row">
      <h2 class="titulo">¿Estas seguro de borrar tu perfil?</h2>
+     
     <ul class="ds-btn">
         <li>
-             <a class="btn btn-lg btn-primary" href="http://dotstrap.com/">
+             <a class="btn btn-lg btn-primary" href="http://google.com/">
+                 <form action="/chabelo-sofware/eliminarUsuario">
           <i class="glyphicon glyphicon-user pull-left"></i><span>Si<br><small>¡Borraras tu perfil!</small></span></a> 
-            
+</form>
         </li>
         <li>
-             <a class="btn btn-lg btn-success " href="http://dotstrap.com/">
+             <a class="btn btn-lg btn-success " href="http://google.com/">
          <i class="glyphicon glyphicon-dashboard pull-left"></i><span>No<br><small>¡Seguiras con nosotros!</small></span></a> 
             
         </li>
