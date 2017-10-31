@@ -178,7 +178,9 @@
             <a class="btn btn-primary btn-xl" style="color: white; margin: 10px;">Logo</a>
           </div>
           <div class="col-lg-4 col-sm-6 text-center">
-            <a class="btn btn-primary btn-xl" style="color: white; margin: 10px;">Cerrar Sesión</a>
+            <form action="/chabelo-sofware/logout">
+                <button class="btn btn-primary btn-xl" style="color: white; margin: 10px;">Cerrar Sesión</button>
+            </form>
           </div>
         </div>
         <div class="row no-gutter popup-gallery">

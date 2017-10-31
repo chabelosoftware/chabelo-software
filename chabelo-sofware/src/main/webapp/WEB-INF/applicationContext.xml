@@ -82,17 +82,11 @@
     <!--Aqui se configuran los usuarios -->
     <security:authentication-manager>
         <security:authentication-provider>
-            <!-- Se puede encriptar las contrasenia-->
-            <!--<security:password-encoder hash="bcrypt" />-->
-            <security:user-service>
-                <!-- Se da de alta el usuario la contrasenia y el rol-->
-                <security:user name="ElJhon" password="1234" authorities="ROLE_ADMIN" />
-                <security:user name="ElPapaJhon" password="1234" authorities="ROLE_ADMIN" />
-                <security:user name="DonJhon" password="1234" authorities="ROLE_ADMIN" />
-                
-            </security:user-service>
-            
-        </security:authentication-provider>
+                        <security:password-encoder hash="bcrypt" />
+			<security:jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="SELECT nombre_usuario,password,1 FROM Usuario WHERE nombre_usuario=?"
+                                authorities-by-username-query="SELECT nombre_usuario,rol,1 FROM Usuario WHERE nombre_usuario=?"/>
+		</security:authentication-provider>
     </security:authentication-manager>
     </beans>
     

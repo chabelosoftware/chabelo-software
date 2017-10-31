@@ -45,7 +45,6 @@ public class actualizar {
         String games = request.getParameter("choice3");
         String livres = request.getParameter("choice2");
         String Sports = request.getParameter("choice4");
-        Gustos
         
         if(name!=null){
             u.setVarNombre(name);            

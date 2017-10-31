@@ -14,6 +14,7 @@ import mx.unam.ciencias.is.modelo.UsuarioDAO;
 import mx.unam.ciencias.is.mapeobd.Usuario;
 import mx.unam.ciencias.is.modelo.GustosDAO;
 import mx.unam.ciencias.is.mapeobd.Gustos;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 /**
@@ -43,6 +44,8 @@ public class crearControlador {
         String user = request.getParameter("username");
         String mail = request.getParameter("email");
         String contrasena = request.getParameter("password");
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String hashedPassword = passwordEncoder.encode(contrasena);
         String contrasenaConf = request.getParameter("passworConf");
         Usuario u = Usuario_db.getUsuario(user);
         if(u==null){
@@ -52,7 +55,7 @@ public class crearControlador {
             u.setVarAPaterno(lastnameP);
             u.setVarAMaterno(lastnameM);
             u.setVarE_Mail(mail);
-            u.setVarPassword(contrasena);
+            u.setVarPassword(hashedPassword);
             u.setVarRol("ROLE_ADMIN");
             Usuario_db.guardar(u);
             
