@@ -91,7 +91,7 @@ public class crearControlador {
         if(games != null && games.equals("on")){
             Gustos g3 = new Gustos();
             g3.setVarNombre_Usuario(us);
-            g3.setVarGusto("Cine");
+            g3.setVarGusto("Juegos");
             Gustos_db.guardar(g3);        
         }
         if(livres != null && livres.equals("on")){

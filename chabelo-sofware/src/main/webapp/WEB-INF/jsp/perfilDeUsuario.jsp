@@ -51,10 +51,10 @@
     <header class="masthead">
       <div class="header-content">
         <div class="header-content-inner">
-          <h1 id="homeHeading">Bienvenido a Friend Zone (Nombre_de_usuario)</h1>
+          <h1 id="homeHeading">Bienvenido a Friend Zone ${username}</h1>
           <hr>
-          <p>Tu Nombre: Steven Jimenez </p>
-          <p>Tu Correo: SteJim@proplayer.com</p>
+          <p>Tu Nombre: ${nombre} </p>
+          <p>Tu Correo: ${correo}</p>
           <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Encuentra más ;)</a>
         </div>
       </div>
@@ -69,37 +69,44 @@
           </div>
         </div>
       </div>
+        
+      <script type="text/javascript">var m = "${m}";</script>
+      <script type="text/javascript">var j = "${j}";</script>
+      <script type="text/javascript">var d = "${d}";</script>
+      <script type="text/javascript">var l = "${l}";</script>
+      <script type="text/javascript">var p = "${p}";</script>
+        
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6 text-center">
+          <div class="col-lg-4 col-md-6 text-center" id="musica">
             <div class="service-box">
               <i class="fa fa-4x fa-music text-primary sr-icons"></i>
               <h3>Música</h3>
               <p class="text-muted">¡Pegale al ritmo!</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 text-center">
+          <div class="col-lg-4 col-md-6 text-center" id="pelis">
             <div class="service-box">
               <i class="fa fa-4x fa-film text-primary sr-icons"></i>
               <h3>Películas/Series</h3>
               <p class="text-muted">¡Listas las palomitas!</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 text-center">
+          <div class="col-lg-4 col-md-6 text-center" id="juegos">
             <div class="service-box">
               <i class="fa fa-4x fa-gamepad text-primary sr-icons"></i>
               <h3>Videojuegos</h3>
               <p class="text-muted">Press Start</p>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 text-center">
+          <div class="col-lg-6 col-md-6 text-center" id="libros">
             <div class="service-box">
               <i class="fa fa-4x fa-book text-primary sr-icons"></i>
               <h3>Libros</h3>
               <p class="text-muted">Menos face y más book</p>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 text-center">
+          <div class="col-lg-6 col-md-6 text-center" id="deportes" >
             <div class="service-box">
               <i class="fa fa-4x fa-soccer-ball-o text-primary sr-icons"></i>
               <h3>Deportes</h3>
@@ -245,6 +252,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
+    <script src="js/perfilDeUsuario.js"></script>
 
   </body>
 

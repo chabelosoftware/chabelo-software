@@ -15,8 +15,8 @@
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         p:driverClassName="${jdbc.driverClassName}"
         p:url="${jdbc.url}"
-        p:username="${jdbc.username}"
-        p:password="${jdbc.password}"/>
+        p:username="${jdbc.username}"/>
+        <!--p:password="${jdbc.password}"-->
      
    <bean id="hibernate4AnnotatedSessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
