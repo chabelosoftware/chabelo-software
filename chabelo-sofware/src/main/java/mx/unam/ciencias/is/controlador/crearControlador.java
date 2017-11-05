@@ -36,7 +36,7 @@ public class crearControlador {
      */
     
     
-    @RequestMapping(value="/crearUsuario", method = RequestMethod.GET)
+    @RequestMapping(value="/crearUsuario", method = RequestMethod.POST)
     public ModelAndView registraUsuario(HttpServletRequest request,ModelMap model){
         String name = request.getParameter("nombre");
         String lastnameP = request.getParameter("apellidoP");

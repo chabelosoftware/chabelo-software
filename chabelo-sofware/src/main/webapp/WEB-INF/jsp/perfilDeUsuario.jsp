@@ -179,7 +179,9 @@
         </div>
         <div class="row">
           <div class="col-lg-4 col-sm-6 text-center">
-            <a class="btn btn-primary btn-xl" style="color: white; margin: 10px;">Borrar Perfil</a>
+            <form action="/chabelo-sofware/confirmacionElimina">
+                <button class="btn btn-primary btn-xl" style="color: white; margin: 10px;">Borrar Perfil</button>
+            </form>
           </div>
           <div class="col-lg-4 col-sm-6 text-center">
             <a class="btn btn-primary btn-xl" style="color: white; margin: 10px;">Logo</a>

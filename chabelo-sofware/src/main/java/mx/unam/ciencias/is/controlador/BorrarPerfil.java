@@ -59,4 +59,10 @@ public class BorrarPerfil {
         
         return "redirect:/sesion/inicioU";
     }
+    
+    @RequestMapping(value="/confirmacionElimina", method = RequestMethod.GET)
+    public String confirmacion(HttpServletRequest request, Principal principal){
+        
+        return "eliminacion";
+    }
 }
