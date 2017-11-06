@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
        <link rel="stylesheet" type="text/css" href="<c:url value="/css/resultadobusqueda.css"/> ">
 
@@ -48,7 +48,7 @@
 										<td>
 											<div class="media">
 												<a href="#" class="pull-left">
-													<img src="http://www.prevenciondelaviolencia.org/sites/all/themes/pcc/images/user.png" class="media-photo">
+													
 												</a>
 												<div class="media-body">
 													<span class="media-meta pull-right">Octubre 20 2017</span>
@@ -69,7 +69,7 @@
 				<div class="content-footer">
 					<p>
 						Page © - 2017 <br>
-						Powered By <a href="https://www.facebook.com/" target="_blank">ChabeloSoftware</a>
+						Powered By <a>ChabeloSoftware</a>
 					</p>
 				</div>
 			</div>

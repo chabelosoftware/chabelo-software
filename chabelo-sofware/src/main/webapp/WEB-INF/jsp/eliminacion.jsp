@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
        <link rel="stylesheet" type="text/css" href="<c:url value="/css/eliminacion.css"/> ">
         <title>Confirmacion de Eliminacion</title>
@@ -22,18 +22,18 @@
      <h2 class="titulo">¿Estas seguro de borrar tu perfil?</h2>
      
     <ul class="ds-btn">
+        <form action="/chabelo-sofware/eliminarUsuario">
         <li>
-             <a class="btn btn-lg btn-primary" href="http://google.com/">
-                 <form action="/chabelo-sofware/eliminarUsuario">
-          <i class="glyphicon glyphicon-user pull-left"></i><span>Si<br><small>¡Borraras tu perfil!</small></span></a> 
-</form>
+          <button class="glyphicon glyphicon-user pull-left"><span>Si<br><small>¡Borraras tu perfil!</small></span></a> </button>
         </li>
+        </form>
+         <form action="/chabelo-sofware/cancelarEliminar">
         <li>
-             <a class="btn btn-lg btn-success " href="http://google.com/">
-         <i class="glyphicon glyphicon-dashboard pull-left"></i><span>No<br><small>¡Seguiras con nosotros!</small></span></a> 
+            
+         <button class="glyphicon glyphicon-dashboard pull-left"><span>No<br><small>¡Seguiras con nosotros!</small></span></a></button> 
             
         </li>
-        
+    </form>
     </ul>
     
 	</div>

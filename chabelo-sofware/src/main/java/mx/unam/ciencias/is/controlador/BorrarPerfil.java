@@ -53,4 +53,16 @@ public class BorrarPerfil {
         Usuario_db.eliminar(us);
         return "redirect:/";
     }
+    
+    @RequestMapping(value="/cancelarEliminar", method = RequestMethod.GET)
+    public String cancelar(HttpServletRequest request, Principal principal){
+        
+        return "redirect:/sesion/inicioU";
+    }
+    
+    @RequestMapping(value="/confirmacionElimina", method = RequestMethod.GET)
+    public String confirmacion(HttpServletRequest request, Principal principal){
+        
+        return "eliminacion";
+    }
 }

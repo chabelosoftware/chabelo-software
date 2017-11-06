@@ -38,7 +38,7 @@
   </div>
   <div class="register">
     <h1>¡Registrate Ahora!</h1>
-    <form action="/chabelo-sofware/crearUsuario">
+    <form action="/chabelo-sofware/crearUsuario" method="POST">
       <p><input type="text" name="nombre" value="" placeholder="Nombre"></p>
       <p><input type="text" name="apellidoP" value="" placeholder="Apellido"></p>
       <p><input type="text" name="apellidoM" value="" placeholder="Apellido2"></p>
