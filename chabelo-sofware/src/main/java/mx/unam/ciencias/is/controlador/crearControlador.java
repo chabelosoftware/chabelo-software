@@ -48,7 +48,7 @@ public class crearControlador {
         String hashedPassword = passwordEncoder.encode(contrasena);
         String contrasenaConf = request.getParameter("passworConf");
         Usuario u = Usuario_db.getUsuario(user);
-        if(u==null){
+        if(u==null && contrasena.equals(contrasenaConf)){
             u = new Usuario();
             u.setVarNombre_Usuario(user);
             u.setVarNombre(name);
@@ -58,10 +58,11 @@ public class crearControlador {
             u.setVarPassword(hashedPassword);
             u.setVarRol("ROLE_ADMIN");
             Usuario_db.guardar(u);
-            
+           
+            model.addAttribute("username", user);
+            return new ModelAndView("defGustos",model);
         }        
-        model.addAttribute("username", user);
-        return new ModelAndView("defGustos",model);
+        return new ModelAndView("inicio",model);
     }
     
     @RequestMapping(value="/registraGustos" , method = RequestMethod.POST)
