@@ -23,26 +23,27 @@
       <div class="container">
 <div class="col-md-5">
     <div class="form-area">  
-        <form action="/chabelo-sofware/actualizarUsuario role="form">
+        <form action="/chabelo-sofware/actualizarUsuario" method="POST">
         <br style="clear:both">
                     <h3 style="margin-bottom: 25px; text-align: center;">Actualiza tus datos</h3>
-    				<div class="form-group">
-						<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+    			
+                    <div class="form-group">
+						<input type="text" class="form-control" id="name" name="name" placeholder="Name" >
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="paterno" name="paterno" placeholder="Apellido Paterno" required>
+						<input type="text" class="form-control" id="paterno" name="paterno" placeholder="Apellido Paterno" >
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="materno" name="materno" placeholder="Apellido Materno" required>
+						<input type="text" class="form-control" id="materno" name="materno" placeholder="Apellido Materno" >
 					</div>
                                         <div class="form-group">
-						<input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+						<input type="text" class="form-control" id="email" name="email" placeholder="Email">
 					</div>
                                         <div class="form-group">
-						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de Usuario" required>
+						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de Usuario" >
 					</div>
                                         <div class="form-group">
-						<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contrasena" required>
+						<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contrasena" >
 					</div>
                                         <div class="form-group">
 						<input type="password" class="form-control" id="confirmacion" name="confirmacion" placeholder="Confirmacion Contrasena" required>
@@ -64,7 +65,7 @@
                     </div>
                     
             
-        <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Aceptar</button>
+        <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Aceptar</button>
         </form>
     </div>
 </div>

@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package mx.unam.ciencias.is.controlador;
+import java.util.LinkedList;
+import java.util.List;
 import java.security.Principal;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
@@ -29,8 +31,16 @@ public class actualizar {
     @Autowired
     GustosDAO Gustos_db;
     
-    @RequestMapping(value="/actualizarUsuario", method = RequestMethod.GET)
-    public String actualizaUsuario(HttpServletRequest request){
+    @RequestMapping(value="/actualizarP", method = RequestMethod.GET)
+    public String confirmacion(HttpServletRequest request, Principal principal){
+        
+        return "actualizacion";
+    }
+    
+    @RequestMapping(value="/actualizarUsuario", method = RequestMethod.POST)
+    public String actualizaUsuario(HttpServletRequest request, Principal principal){
+        String usuario = principal.getName();
+        
         String name = request.getParameter("name");
         String user = request.getParameter("usuario");
         String lastnameP = request.getParameter("paterno");
@@ -46,31 +56,73 @@ public class actualizar {
         String livres = request.getParameter("choice2");
         String Sports = request.getParameter("choice4");
         
+        Usuario us = Usuario_db.getUsuario(usuario);
+   
         if(name!=null){
-            u.setVarNombre(name);            
+            us.setVarNombre(name);
+            Usuario_db.actualizar(us);            
         }
         if(user!=null){
-            u.setVarNombre_Usuario(user);
+            us.setVarNombre_Usuario(user);
+            Usuario_db.actualizar(us);
         }
         if(lastnameP!=null){
-            u.setVarAPaterno(lastnameP);
+            us.setVarAPaterno(lastnameP);
+            Usuario_db.actualizar(us);
         }
         if(lastnameM!=null){
-            u.setVarAMaterno(lastnameM);
+            us.setVarAMaterno(lastnameM);
+            Usuario_db.actualizar(us);
         }
         if(mail!=null){
-            u.setVarE_Mail(mail);
+            us.setVarE_Mail(mail);
+            Usuario_db.actualizar(us);
         }
         if(lastnameM!=null){
-            u.setVarPassword(password);
+            us.setVarPassword(password);
+            Usuario_db.actualizar(us);
         }
-      /*  if(musique!=null && musique.equals("on") && !Gustos_db. ){
-            Gustos g1 = new Gustos();
-            g1.setVarNombre_Usuario(us);
-            g1.setVarGusto("Musica");
-            Gustos_db.guardar(g1);        
-        }*/
-        Usuario_db.actualizar(u);
+        
+        List<Gustos> gustos = Gustos_db.getGustos(us);
+        
+        for(Gustos g: gustos){
+            if(musique.equals("on") && !gustos.contains(g) && musique != null){
+                Gustos g1 = new Gustos();
+                g1.setVarNombre_Usuario(us);
+                g1.setVarGusto("Musica");
+                Gustos_db.actualizar(g1);
+
+            }
+            if(cinema.equals("on") && !gustos.contains(g) && cinema != null){
+                Gustos g2 = new Gustos();
+                g2.setVarNombre_Usuario(us);
+                g2.setVarGusto("Peliculas/Series");
+                Gustos_db.guardar(g2); 
+            }
+            if(games.equals("on") && !gustos.contains(g) && games != null){
+                Gustos g3 = new Gustos();
+                g3.setVarNombre_Usuario(us);
+                g3.setVarGusto("Videojuegos");
+                Gustos_db.guardar(g3); 
+
+            }
+            if(livres.equals("on") && !gustos.contains(g) && livres != null){
+                Gustos g4 = new Gustos();
+                g4.setVarNombre_Usuario(us);
+                g4.setVarGusto("Libros");
+                Gustos_db.actualizar(g4); 
+
+            }
+            if(Sports.equals("on") && !gustos.contains(g) && Sports != null){
+                Gustos g5 = new Gustos();
+                g5.setVarNombre_Usuario(us);
+                g5.setVarGusto("Deportes");
+                Gustos_db.guardar(g5); 
+
+            }
+            
+        }
+        
     return "redirect:/actualizacion";
 }
 }
