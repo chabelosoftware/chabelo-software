@@ -13,10 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class ControladorDummy {
-    @RequestMapping(value="/", method = RequestMethod.GET)
-    public String inicio(){
-        return "inicio";   
-    }
     
     @RequestMapping(value="/perfilDeUsuario", method = RequestMethod.GET)
     public String perfilDeUsuario(){
