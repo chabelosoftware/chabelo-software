@@ -37,15 +37,12 @@
 						</div>
 						<div class="table-container">
 							<table class="table table-filter">
+                                                            <c:forEach var="u" items="${usuarios}">
 								<tbody>
 									<tr>
-										<td>
-											
-										</td>
-										<td>
-											
-										</td>
-										<td>
+										<td></td>
+										<td></td>
+                                                                                <td>
 											<div class="media">
 												<a href="#" class="pull-left">
 													<img src="http://www.prevenciondelaviolencia.org/sites/all/themes/pcc/images/user.png" class="media-photo">
@@ -53,15 +50,16 @@
 												<div class="media-body">
 													<span class="media-meta pull-right">Octubre 20 2017</span>
 													<h4 class="title">
-														Nombre Usuario
+														${u.getVarNombre()}
 													</h4>
-													<p class="summary">Email</p>
+													<p class="summary">${u.getVarE_Mail()}</p>
 												</div>
 											</div>
 										</td>
 									</tr>
 									
 								</tbody>
+                                                            </c:forEach>
 							</table>
 						</div>
 					</div>
@@ -69,7 +67,7 @@
 				<div class="content-footer">
 					<p>
 						Page © - 2017 <br>
-						Powered By <a href="https://www.facebook.com/" target="_blank">ChabeloSoftware</a>
+                                                Powered By <form action="/chabelo-sofware/"><button>ChabeloSoftware</button></form>
 					</p>
 				</div>
 			</div>

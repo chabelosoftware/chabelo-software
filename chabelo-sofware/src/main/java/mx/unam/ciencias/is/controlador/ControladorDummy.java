@@ -13,10 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class ControladorDummy {
-    @RequestMapping(value="/", method = RequestMethod.GET)
-    public String inicio(){
-        return "inicio";   
-    }
     
     @RequestMapping(value="/perfilDeUsuario", method = RequestMethod.GET)
     public String perfilDeUsuario(){
@@ -28,17 +24,12 @@ public class ControladorDummy {
         return "consultaDeUnPerfil";   
     }
     
-     @RequestMapping(value="/actualizacion", method = RequestMethod.GET)
+    @RequestMapping(value="/actualizacion", method = RequestMethod.GET)
     public String actualizacion(){
         return "actualizacion";   
     }
     
-     @RequestMapping(value="/resultadobusqueda", method = RequestMethod.GET)
-    public String resultadobusqueda(){
-        return "resultadobusqueda";   
-    }
-    
-     @RequestMapping(value="/eliminacion", method = RequestMethod.GET)
+    @RequestMapping(value="/eliminacion", method = RequestMethod.GET)
     public String eliminacion(){
         return "eliminacion";   
     }

@@ -114,5 +114,21 @@ height: 110%;
 
 </ul>
 
+    <form action="/chabelo-sofware/sesion/buscMusica">
+                <button class="btn btn-primary btn-xl" >Música</button>
+    </form>
+    <form action="/chabelo-sofware/sesion/buscJuegos">
+                <button class="btn btn-primary btn-xl" >Videojuegos</button>
+    </form>
+    <form action="/chabelo-sofware/sesion/buscLibros">
+                <button class="btn btn-primary btn-xl" >Libros</button>
+    </form>
+    <form action="/chabelo-sofware/sesion/buscCine">
+                <button class="btn btn-primary btn-xl" >Pelicuas</button>
+    </form>
+    <form action="/chabelo-sofware/sesion/buscDeportes">
+                <button class="btn btn-primary btn-xl" >Deportes</button>
+    </form>
+    
 </body>
 </html>
