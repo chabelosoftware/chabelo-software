@@ -190,30 +190,4 @@ public class GustosDAO {
         
         return result;
     }
-    
-    /**
-     * Regresa los gustos con el nombre del gusto dado
-     * @param nombre del los gustos 
-     * @return Los gustos con el nombre dado
-     */
-    public List<Gustos> getGustosPorNombre(String nombre){
-        List<Gustos> result= null;
-        Session session = sessionFactory.openSession();
-        Transaction tx=null;
-        try{
-            tx=session.beginTransaction();
-            String hql= "FROM Gustos WHERE varGusto = :n";
-            Query query =session.createQuery(hql);
-            query.setParameter("n",nombre);
-            result=(List<Gustos>)query.list();
-            tx.commit();
-        }catch (Exception e){
-            if(tx != null)
-                tx.rollback();
-            e.printStackTrace();      
-        }finally{
-            session.close();
-        }
-        return result;
-    }
 }

@@ -121,9 +121,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-4 col-sm-6 text-center">
-              <form action="/chabelo-sofware/sesion/buscGustos">
-                <button class="btn btn-primary btn-xl" style="color: white; margin: 10px;">¡Haz Amigos!</button>
-              </form>
+            <a class="btn btn-primary btn-xl" style="color: white; margin: 10px;">¡Haz Amigos!</a>
           </div>
           <div class="col-lg-4 col-sm-6 text-center links">
             <a class="btn btn-primary btn-xl" style="color: white; margin: 10px;">Chat</a>
