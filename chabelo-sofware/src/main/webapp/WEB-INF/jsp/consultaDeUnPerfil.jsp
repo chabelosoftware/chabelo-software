@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,7 +44,7 @@
               <a class="nav-link js-scroll-trigger" href="#services">Gustos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Más</a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio">MÃ¡s</a>
             </li>
           </ul>
         </div>
@@ -51,11 +54,11 @@
     <header class="masthead">
       <div class="header-content">
         <div class="header-content-inner">
-          <h1 id="homeHeading">Este es (Nombre_de_usuario)</h1>
+          <h1 id="homeHeading">Este es ${username}</h1>
           <hr>
-          <p>Nombre: Steven Jimenez </p>
-          <p>Correo: SteJim@proplayer.com</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Encuentra más ;)</a>
+          <p>Nombre: ${nombre} </p>
+          <p>Correo: ${correo}</p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Encuentra mÃ¡s ;)</a>
         </div>
       </div>
     </header>
@@ -69,41 +72,49 @@
           </div>
         </div>
       </div>
+        
+      <script type="text/javascript">var m = "${m}";</script>
+      <script type="text/javascript">var j = "${j}";</script>
+      <script type="text/javascript">var d = "${d}";</script>
+      <script type="text/javascript">var l = "${l}";</script>
+      <script type="text/javascript">var p = "${p}";</script>
+        
+        
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6 text-center">
+          <div class="col-lg-4 col-md-6 text-center" id="musica">
             <div class="service-box">
               <i class="fa fa-4x fa-music text-primary sr-icons"></i>
-              <h3>Música</h3>
-              <p class="text-muted">¡Pegale al ritmo!</p>
+              <h3>MÃºsica</h3>
+              <p class="text-muted">Â¡Pegale al ritmo!</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 text-center">
+          <div class="col-lg-4 col-md-6 text-center" id="pelis">
             <div class="service-box">
               <i class="fa fa-4x fa-film text-primary sr-icons"></i>
-              <h3>Películas/Series</h3>
-              <p class="text-muted">¡Listas las palomitas!</p>
+              <h3>PelÃ­culas/Series</h3>
+              <p class="text-muted">Â¡Listas las palomitas!</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 text-center">
+          <div class="col-lg-4 col-md-6 text-center" id ="juegos">
             <div class="service-box">
               <i class="fa fa-4x fa-gamepad text-primary sr-icons"></i>
               <h3>Videojuegos</h3>
               <p class="text-muted">Press Start</p>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 text-center">
+          <div class="col-lg-6 col-md-6 text-center" id="libros">
             <div class="service-box">
               <i class="fa fa-4x fa-book text-primary sr-icons"></i>
               <h3>Libros</h3>
-              <p class="text-muted">Menos face y más book</p>
+              <p class="text-muted">Menos face y mÃ¡s book</p>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 text-center">
+          <div class="col-lg-6 col-md-6 text-center" id="deportes">
             <div class="service-box">
               <i class="fa fa-4x fa-soccer-ball-o text-primary sr-icons"></i>
               <h3>Deportes</h3>
-              <p class="text-muted">El deporte no solo cambia tu cuerpo, también tu mente</p>
+              <p class="text-muted">El deporte no solo cambia tu cuerpo, tambiÃ©n tu mente</p>
             </div>
           </div>
         </div>
@@ -149,7 +160,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
-
+    <script src="js/perfilDeUsuario.js"></script>
   </body>
 
 </html>

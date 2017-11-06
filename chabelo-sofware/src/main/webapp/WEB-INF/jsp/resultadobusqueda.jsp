@@ -54,6 +54,13 @@
 													</h4>
 													<p class="summary">${u.getVarE_Mail()}</p>
 												</div>
+                                                                                                <div>
+                                                                                                    
+                                                                                                </div>
+                                                                                                <form action ="/chabelo-sofware/VerOtroPerfil">
+                                                                                                    <input name = "u" onlyread value ="${u.getVarNombre_Usuario()}"/>
+                                                                                                    <button class ="btn btn-primary btn-xl" style="color: white; margin: 10px;"> Ver Perfil</button>
+                                                                                                </form>
 											</div>
 										</td>
 									</tr>
