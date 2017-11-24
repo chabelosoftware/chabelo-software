@@ -34,7 +34,7 @@ public class BorrarPerfil {
     @Autowired
     ChatearDAO Chatear_db;
     
-    @RequestMapping(value="/eliminarUsuario", method = RequestMethod.GET)
+    @RequestMapping(value="/sesion/eliminarUsuario", method = RequestMethod.GET)
     public String borrarUsuario(HttpServletRequest request,Principal principal){
         String nom_usuario = principal.getName();
         Usuario us = Usuario_db.getUsuario(nom_usuario);
@@ -54,13 +54,13 @@ public class BorrarPerfil {
         return "redirect:logout";
     }
     
-    @RequestMapping(value="/cancelarEliminar", method = RequestMethod.GET)
+    @RequestMapping(value="/sesion/cancelarEliminar", method = RequestMethod.GET)
     public String cancelar(HttpServletRequest request, Principal principal){
         
         return "redirect:/sesion/inicioU";
     }
     
-    @RequestMapping(value="/confirmacionElimina", method = RequestMethod.GET)
+    @RequestMapping(value="/sesion/confirmacionElimina", method = RequestMethod.GET)
     public String confirmacion(HttpServletRequest request, Principal principal){
         
         return "eliminacion";
