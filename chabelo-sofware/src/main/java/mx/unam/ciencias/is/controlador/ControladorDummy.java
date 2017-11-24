@@ -4,51 +4,109 @@
  * and open the template in the editor.
  */
 package mx.unam.ciencias.is.controlador;
+import java.security.Principal;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import mx.unam.ciencias.is.modelo.ChatearDAO;
+import mx.unam.ciencias.is.modelo.MensajeDAO;
+import mx.unam.ciencias.is.modelo.UsuarioDAO;
+import mx.unam.ciencias.is.mapeobd.Gustos;
+import mx.unam.ciencias.is.mapeobd.Usuario;
+import mx.unam.ciencias.is.mapeobd.Chatear;
+import mx.unam.ciencias.is.mapeobd.Mensaje;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 /**
  *
  * @author ahernandez
  */
 @Controller
 public class ControladorDummy {
+    @Autowired
+    MensajeDAO mensajes_db;
+    @Autowired
+    UsuarioDAO usuario_db;
+    @Autowired
+    ChatearDAO chatear_db;
     
-    @RequestMapping(value="/perfilDeUsuario", method = RequestMethod.GET)
-    public String perfilDeUsuario(){
-        return "perfilDeUsuario";   
+    @RequestMapping(value="/sesion/chatindividual", method = RequestMethod.GET)
+    public ModelAndView ver(HttpServletRequest request, ModelMap model, Principal principal){
+        String nom_usuario = request.getParameter("u");
+        model.addAttribute("nom",nom_usuario);
+        return new ModelAndView("chatIndividual",model);
     }
     
-    @RequestMapping(value="/consultaDeUnPerfil", method = RequestMethod.GET)
-    public String consultaDeUnPerfil(){
-        return "consultaDeUnPerfil";   
-    }
-    
-     @RequestMapping(value="/actualizacion", method = RequestMethod.GET)
-    public String actualizacion(){
-        return "actualizacion";   
-    }
-    
-     @RequestMapping(value="/resultadobusqueda", method = RequestMethod.GET)
-    public String resultadobusqueda(){
-        return "resultadobusqueda";   
-    }
-    
-    @RequestMapping(value="/eliminacion", method = RequestMethod.GET)
-    public String eliminacion(){
-        return "eliminacion";   
-    }
-    
-    @RequestMapping(value="/chatindividual", method = RequestMethod.GET)
-    public String chat(){
-        return "chatIndividual";   
-    }
-    
-    @RequestMapping(value = "/respuestaChat", method = RequestMethod.GET, produces="text/plain")
+    @RequestMapping(value = "/sesion/respuestaChat", method = RequestMethod.GET, produces="text/plain")
     @ResponseBody
-    public String test() {
-        return "Mensaje emergente prros del mal";
+    public String dameMensaje(HttpServletRequest request,Principal principal) {
+        String from = principal.getName();
+        String to = request.getParameter("nom");
+        String index = request.getParameter("index");
+        Usuario remitente = usuario_db.getUsuario(from);
+        Usuario destinatario = usuario_db.getUsuario(to);
+        String flag = "1";
+        
+        Chatear chat = chatear_db.getChat(remitente,destinatario);
+        Chatear reverseChat = chatear_db.getChat(destinatario,remitente);
+        Mensaje msg = mensajes_db.getMensaje(Integer.parseInt(index), chat, reverseChat);
+        
+        if(msg == null) return "";
+        
+        if(msg.getChat_id().getVarNombre_UsuarioD().getVarNombre_Usuario().equals(to))
+            flag = "0";
+        return msg.getVarMensaje()+flag;
     }
+    
+    
+    
+    
+    @RequestMapping(value = "/sesion/mandarMsg", method = RequestMethod.GET, produces="text/plain")
+    @ResponseBody
+    public String test(HttpServletRequest request,Principal principal) {
+        String msg = request.getParameter("mensaje");
+        String from = principal.getName();
+        String to = request.getParameter("nom");
+        
+        Usuario remitente = usuario_db.getUsuario(from);
+        Usuario destinatario = usuario_db.getUsuario(to);
+        
+        Chatear chat = chatear_db.getChat(remitente,destinatario);
+        
+        if(chat == null){
+            chat = new Chatear();
+            chat.setVarNombre_UsuarioD(destinatario);
+            chat.setVarNombre_UsuarioR(remitente);
+            chatear_db.guardar(chat);
+        }
+        
+        Mensaje m = new Mensaje();
+        m.setChat_id(chat);
+        m.setVarMensaje(msg);
+        mensajes_db.guardar(m);
+        return "";
+    }
+    
+    @RequestMapping(value = "/sesion/respuestaChatRecibidos", method = RequestMethod.GET, produces="text/plain")
+    @ResponseBody
+    public String dameMensajeRecibido(HttpServletRequest request,Principal principal) {
+        String from = principal.getName();
+        String to = request.getParameter("nom");
+        String index = request.getParameter("index");
+        Usuario remitente = usuario_db.getUsuario(from);
+        Usuario destinatario = usuario_db.getUsuario(to);
+        String flag = "1";
+        
+        Chatear chat = chatear_db.getChat(destinatario,remitente);
+        Mensaje msg = mensajes_db.getMensaje(Integer.parseInt(index), chat, null);
+        
+        if(msg == null) return "";
+        
+        return msg.getVarMensaje()+flag;
+    }
+    
 }

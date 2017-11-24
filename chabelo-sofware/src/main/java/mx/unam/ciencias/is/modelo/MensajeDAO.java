@@ -6,6 +6,7 @@
 package mx.unam.ciencias.is.modelo;
 import mx.unam.ciencias.is.mapeobd.Mensaje;
 import java.util.List;
+import mx.unam.ciencias.is.mapeobd.Chatear;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -150,6 +151,38 @@ public class MensajeDAO {
             String hql = "FROM Mensaje WHERE mensaje_id = :id";                  
             Query query = s.createQuery(hql);
             query.setParameter("id",id);
+            result = (Mensaje)query.uniqueResult();
+            tx.commit();
+        }catch(Exception e){
+            if(tx != null)
+                tx.rollback();
+            e.printStackTrace();
+        }finally{
+            s.close();
+        }
+        
+        return result;
+    }
+    
+    /**
+     * Regresa el index-ésimo mensaje que ha llegado, entre los usuarios involucrados en los chats dados 
+     * @param index indice del mensaje con respecto a su tiempo de envio, de mayor a menor
+     * @param chat chat asociado a los mensajes
+     * @param reverseChat el chat inverso asociado a los mensajes, es decir, con el remitente y el destinatario intercambiados
+     * @return el mensaje con las caracteristicas dadas
+     */
+    public Mensaje getMensaje(int index, Chatear chat, Chatear reverseChat) {
+        Mensaje result = null;
+        Session s = sessionFactory.openSession();
+        Transaction tx = null;
+        try{
+            tx = s.beginTransaction();
+            String hql = "FROM Mensaje WHERE chat_id = :c OR chat_id = :r ORDER BY mensaje_id DESC";                  
+            Query query = s.createQuery(hql);
+            query.setParameter("c",chat);
+            query.setParameter("r",reverseChat);
+            query.setFirstResult(index);
+            query.setMaxResults(1);
             result = (Mensaje)query.uniqueResult();
             tx.commit();
         }catch(Exception e){

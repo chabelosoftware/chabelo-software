@@ -190,4 +190,32 @@ public class ChatearDAO {
         
         return result;
     }
+    
+    /**
+     * Regresa el chat con el numbre de usuario dado como remitente y destinatario
+     * @param from objeto usuario del usuario remitente
+     * @param to objeto usuario del usuario destinatario.
+     * @return el chat con los usuarios from y to
+     */
+    public Chatear getChat(Usuario from, Usuario to){
+        Chatear result= null;
+        Session session = sessionFactory.openSession();
+        Transaction tx=null;
+        try{
+            tx=session.beginTransaction();
+            String hql= "FROM Chatear WHERE varNombre_UsuarioR = :from AND varNombre_UsuarioD = :to";
+            Query query =session.createQuery(hql);
+            query.setParameter("from",from);
+            query.setParameter("to",to);
+            result = (Chatear)query.uniqueResult();
+            tx.commit();
+        }catch (Exception e){
+            if(tx != null)
+                tx.rollback();
+            e.printStackTrace();      
+        }finally{
+            session.close();
+        }
+        return result;
+    }
 }

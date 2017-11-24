@@ -23,30 +23,37 @@
       <div class="container">
 <div class="col-md-5">
     <div class="form-area">  
-        <form action="/chabelo-sofware/actualizarUsuario role="form">
+        <form action="/chabelo-sofware/actualizarUsuario" method="POST">
         <br style="clear:both">
                     <h3 style="margin-bottom: 25px; text-align: center;">Actualiza tus datos</h3>
-    				<div class="form-group">
-						<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+    			
+                    <div class="form-group">
+						<input type="text" class="form-control" id="name" name="name" placeholder="Name" value=${nombre}>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="paterno" name="paterno" placeholder="Apellido Paterno" required>
+						<input type="text" class="form-control" id="paterno" name="paterno" placeholder="Apellido Paterno" value=${paterno}>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="materno" name="materno" placeholder="Apellido Materno" required>
+						<input type="text" class="form-control" id="materno" name="materno" placeholder="Apellido Materno" value=${materno} >
 					</div>
                                         <div class="form-group">
-						<input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+						<input type="text" class="form-control" id="email" name="email" placeholder="Email" value=${correo}>
 					</div>
                                         <div class="form-group">
-						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de Usuario" required>
+						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de Usuario" value=${usuario} readonly>
 					</div>
                                         <div class="form-group">
-						<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contrasena" required>
+						<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contrasena">
 					</div>
                                         <div class="form-group">
 						<input type="password" class="form-control" id="confirmacion" name="confirmacion" placeholder="Confirmacion Contrasena" required>
 					</div>
+                                        
+                    <script type="text/javascript">var m = "${m}";</script> 
+                    <script type="text/javascript">var l = "${l}";</script>  
+                    <script type="text/javascript">var p = "${p}";</script>  
+                    <script type="text/javascript">var d = "${d}";</script>  
+                    <script type="text/javascript">var j = "${j}";</script>  
                     <div class="form-group">
                         <input type="checkbox" id="musica" name="choice1" value="musica"> <label for="musica">Musica</label>
                     </div>
@@ -57,18 +64,22 @@
                         <input type="checkbox" id="juegos" name="choice3" value="juegos"> <label for="juegos">Videojuegos</label>
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" id="deportes" name="choice4" value="deportes"> <label for="deportes">Deportes</label>
+                        <input type="checkbox" id="deportes" name="choice4" value="deportes" > <label for="deportes">Deportes</label>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" id="peliculas" name="choice5" value="peliculas"> <label for="peliculas">Peliculas/Series</label>                   
                     </div>
                     
             
-        <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Aceptar</button>
+        <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Aceptar</button>
         </form>
     </div>
 </div>
 </div>
-
+    
+     <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    
+    <script src="js/actualizacion.js"></script>
     </body>
 </html>

@@ -12,7 +12,7 @@
         
         
     <body>
-       <div class="chat_window">
+        <div class="chat_window">
            <div class="top_menu">
                <div class="buttons">
                    <div class="button close"></div>
@@ -22,22 +22,20 @@
                <div class="title">Chat</div>
            </div>
            <ul class="messages" id="chat">
-                <li class="message left appeared" id="message">
-                    <div class="avatar"></div>
-                    <div class="text_wrapper">
-                         <div class="text">Perros del Mal</div>
-                    </div>
-               </li>
+                
            </ul>
            <div class="bottom_wrapper clearfix">
                <div class="message_input_wrapper">
-                   <input class="message_input" placeholder="Type your message here..." /></div>
-                   <div class="send_message">
+                    
+                        <input name="mensaje" class="message_input" placeholder="Type your message here..." />
+                                                                                                    
+               </div>  
+                         <div class="send_message">
                        
-                       <div class="icon"></div>
-                       <!--<div class="text">Send</div>-->
-                       <div class="text" type="button" onclick="loadDoc()" id="demo">Change Content</div>    
-                   </div>
+                            <div class="icon"></div>
+                                <!--<div class="text">Send</div>-->
+                            <div class="text" type="button" onclick="func()" id="demo">Enviar</div>    
+                         </div>
            </div>
        </div>
        <div class="message_template">
@@ -53,11 +51,21 @@
         
     </body>
     </head>
-    
+    <script>var mensajes = []; </script>
+    <script>var nombre = "${nom}";</script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/chat.js"></script>
 
     <script>
+        function func(){
+            var $message_input;
+            $message_input = $('.message_input');
+            var $message_value = $message_input.val();
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "mandarMsg?mensaje="+$message_value+"&nom="+nombre, true);
+            xhttp.send();
+        }            
+        
         function loadDoc() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
