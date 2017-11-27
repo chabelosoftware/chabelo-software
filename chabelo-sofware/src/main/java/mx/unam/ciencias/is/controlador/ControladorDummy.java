@@ -108,5 +108,9 @@ public class ControladorDummy {
         
         return msg.getVarMensaje()+flag;
     }
+        @RequestMapping(value="/chatGeneral", method = RequestMethod.GET)
+    public String ver(HttpServletRequest request){
+        return "chatGeneral";
+    }
     
 }
