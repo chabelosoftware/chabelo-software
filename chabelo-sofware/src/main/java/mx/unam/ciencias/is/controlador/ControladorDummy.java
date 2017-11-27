@@ -5,6 +5,8 @@
  */
 package mx.unam.ciencias.is.controlador;
 import java.security.Principal;
+import java.util.List;
+import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mx.unam.ciencias.is.modelo.ChatearDAO;
@@ -108,9 +110,22 @@ public class ControladorDummy {
         
         return msg.getVarMensaje()+flag;
     }
-        @RequestMapping(value="/chatGeneral", method = RequestMethod.GET)
-    public String ver(HttpServletRequest request){
-        return "chatGeneral";
+        @RequestMapping(value="/sesion/chatGeneral", method = RequestMethod.GET)
+    public ModelAndView chatgral(HttpServletRequest request, ModelMap model,Principal principal){
+        List<Chatear> chats = chatear_db.getChats(); //lsita de TODOS los chats
+        List<Chatear> ch = new ArrayList<Chatear>();
+        String nu = principal.getName();
+        
+        for(Chatear c : chats)
+            if(c.getVarNombre_UsuarioD().getVarNombre_Usuario().equals(nu))
+                ch.add(c); //En ch solo van las que son destinadas al usuario en sesion
+                
+          
+        model.addAttribute("chats", ch);
+        
+        return new ModelAndView("chatGeneral",model);
     }
+    
+    
     
 }

@@ -126,7 +126,9 @@
               </form>
           </div>
           <div class="col-lg-4 col-sm-6 text-center links">
-            <a class="btn btn-primary btn-xl" style="color: white; margin: 10px;">Chat</a>
+              <form action="/chabelo-sofware/sesion/chatGeneral">
+                <button class="btn btn-primary btn-xl" style="color: white; margin: 10px;">Chat</button>
+              </form>
           </div>
           <div class="col-lg-4 col-sm-6 text-center links">
               <form action="/chabelo-sofware/actualizarP" >

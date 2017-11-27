@@ -48,7 +48,9 @@
            </li>
                
        </div>
-        
+        <form action="/chabelo-sofware/sesion/inicioU">
+            <button>Regresa</button>
+        </form>
     </body>
     </head>
     <script>var mensajes = []; </script>
