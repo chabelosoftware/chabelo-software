@@ -79,23 +79,44 @@ height: 110%;
 <li>
      <ul class="demo-1 effect">
         <li>
-            <h2>This is a cool title!</h2>
+            <h2>Música</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+            
         </li>
         
-        <li><img class="top" src="img/microfono.jpg" alt=""/></li>
+        <li><img class="top" src="img/Musica.png" alt=""/></li>
     </ul>
 </li>
 
 
 <li>
-     <ul class="demo-1 effect">
+     <ul class="demo-1 effect" >
         <li>
-            <h2>This is a cool title!</h2>
+            <h2>Libros</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
         </li>
         
-        <li><img id="libros" class="top" src="img/librosd.jpg" alt=""/></li>
+        <li><img id="libros" class="top" action="/chabelo-sofware/sesion/buscCine" src="img/libros.jpg" alt=""/></li>
+    </ul>
+</li>
+<li>
+     <ul class="demo-1 effect">
+        <li>
+            <h2>Películas/Series</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+        </li>
+        
+        <li><img id="libros" class="top" src="img/peliculas.jpg" alt=""/></li>
+    </ul>
+</li>
+<li>
+     <ul class="demo-1 effect">
+        <li>
+            <h2>Videojuegos</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+        </li>
+        
+        <li><img id="libros" class="top" src="img/videojuegos.jpg" alt=""/></li>
     </ul>
 </li>
 
@@ -104,11 +125,11 @@ height: 110%;
 <li>
      <ul class="demo-1 effect">
         <li>
-            <h2>This is a cool title!</h2>
+            <h2>Deportes</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
         </li>
         
-        <li><img class="top" src="img/header.jpg" alt=""/></li>
+        <li><img class="top" src="img/deportes.jpg" alt=""/></li>
     </ul>
 </li>
 
