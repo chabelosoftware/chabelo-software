@@ -29,27 +29,34 @@
             </div>
             <div class="member_list">
                <ul class="list-unstyled">
-                   <c:forEach var="c" items="${chats}">
-                  <li class="left clearfix">
-                     <span class="chat-img pull-left">
-                     <img src="http://www.fillmurray.com/320/310" alt="User Avatar" class="img-circle">
-                     </span>
-                     <div class="chat-body clearfix">
-                        <div class="header_sec">
-                           <strong class="primary-font">${c.getVarNombre_UsuarioR().getVarNombre_Usuario()}</strong>
-                        </div>
-                        <div class="contact_sec">
-                           <strong class="primary-font">Chatea con ${c.getVarNombre_UsuarioR().getVarNombre_Usuario()}</strong> 
-                           <span class="badge pull-right">
-                               <form action="/chabelo-sofware/sesion/chatindividual">
-                                    <input name = "u" onlyread value ="${c.getVarNombre_UsuarioR().getVarNombre_Usuario()}" style="display:none;"/>
-                                    <button>Chat</button>
-                               </form>
-                           </span>
-                        </div>
-                     </div>
-                  </li>
-                  </c:forEach>
+                   <c:choose>
+                        <c:when test="${empty chats}">
+                            <p>No tienes ningun Chat :(</p>
+                        </c:when>
+                        <c:otherwise>
+                           <c:forEach var="c" items="${chats}">
+                                <li class="left clearfix">
+                                <span class="chat-img pull-left">
+                                    <img src="http://www.fillmurray.com/320/310" alt="User Avatar" class="img-circle">
+                                </span>
+                                <div class="chat-body clearfix">
+                                    <div class="header_sec">
+                                        <strong class="primary-font">${c.getVarNombre_UsuarioR().getVarNombre_Usuario()}</strong>
+                                    </div>
+                                    <div class="contact_sec">
+                                        <strong class="primary-font">Chatea con ${c.getVarNombre_UsuarioR().getVarNombre_Usuario()}</strong> 
+                                        <span class="badge pull-right">
+                                            <form action="/chabelo-sofware/sesion/chatindividual">
+                                                <input name = "u" onlyread value ="${c.getVarNombre_UsuarioR().getVarNombre_Usuario()}" style="display:none;"/>
+                                                <button>Chat</button>
+                                            </form>
+                                        </span>
+                                    </div>
+                                </div>
+                                </li>
+                            </c:forEach>
+                        </c:otherwise>
+                    </c:choose>
                </ul>
             </div></div>
          </div>

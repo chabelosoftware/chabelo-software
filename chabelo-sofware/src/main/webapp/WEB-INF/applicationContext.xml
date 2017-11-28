@@ -66,11 +66,8 @@
         <!-- toda peticion con el texto /sesion/ antes de el noombre de la peticion
         solo los que iniciaron sesion pueden acceder -->
         <security:intercept-url pattern="/sesion/*" access="isAuthenticated()" />
-        <!--<security:intercept-url pattern="/admin/*" access=" hasRole('ROLE_Admin')" /> -->
-        <!--<security:intercept-url pattern="/root/*" access="hasRole('ROLE_Admin')" /> -->
-        <!--se configura el conportameinto de el log -->
         <security:form-login login-page="/"
-                             authentication-failure-url="/?login_error=1"
+                             authentication-failure-url="/login_error?error=1"
                              default-target-url="/sesion/inicioU"
                              always-use-default-target="true"/>
         <security:csrf disabled="true"/>

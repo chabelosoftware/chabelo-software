@@ -21,13 +21,14 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
 /**
  *
  * @author gaboptm
  */
 @Controller
-public class IniciarSesion {
+public class IniciarSesion{
     
     @Autowired
     UsuarioDAO Usuario_db;
@@ -37,8 +38,17 @@ public class IniciarSesion {
     @RequestMapping(value="/")
     public String inicio(HttpServletRequest request){
         if(request.isUserInRole("ROLE_ADMIN"))
-           return "redirect:/sesion/inicioU";
+            return "redirect:/sesion/inicioU";
+        
         return "inicio";
+    }
+    
+    @RequestMapping(value="/login_error")
+    public ModelAndView fallo(HttpServletRequest request,ModelMap model){
+        if(request.isUserInRole("ROLE_ADMIN"))
+            return new ModelAndView("redirect:/sesion/inicioU");
+        
+        return new ModelAndView("inicio",model);
     }
     
     @RequestMapping(value="/sesion/inicioU", method = RequestMethod.GET)
