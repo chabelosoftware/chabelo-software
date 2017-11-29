@@ -29,13 +29,8 @@
       <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
      <input name = "fallo" id="fallo" onlyread value ="<%= request.getParameter("error") %>" style="display:none;"/>
       <p id="message" syle="color:red;"></p>
-      <p class="remember_me">
-        <label>
-          <input type="checkbox" name="remember_me" id="remember_me">
-          Remember me on this computer
-        </label>
-      </p>
-      <p class="submit"><input type="submit" name="commit" value="Login"></p>
+      
+      <p class="submit"><input type="submit" name="commit" value="Inicia Sesión"></p>
 
 <script>
 function myFunction() {
@@ -65,13 +60,8 @@ function myFunction() {
       <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
       <p><input type="password" name="passworConf" value="" placeholder="Confirma Contraseña"></p>
       
-      <p class="remember_me">
-        <label>
-          <input type="checkbox" name="remember_me" id="remember_me">
-          Remember me on this computer
-        </label>
-      </p>
-      <p class="submit"><input type="submit" name="commit" value="Login"></p>
+      
+      <p class="submit"><input type="submit" name="commit" value="Registrarse"></p>
     </form>
   </div>
     </div>

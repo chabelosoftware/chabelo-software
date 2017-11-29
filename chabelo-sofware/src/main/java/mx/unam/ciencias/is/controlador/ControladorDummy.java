@@ -101,6 +101,8 @@ public class ControladorDummy {
         String index = request.getParameter("index");
         Usuario remitente = usuario_db.getUsuario(from);
         Usuario destinatario = usuario_db.getUsuario(to);
+        if (remitente.getVarNombre_Usuario().equals(destinatario.getVarNombre_Usuario()))
+            return "";
         String flag = "1";
         
         Chatear chat = chatear_db.getChat(destinatario,remitente);
