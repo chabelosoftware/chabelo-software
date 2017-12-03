@@ -27,14 +27,7 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<div class="pull-right">
-							<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search for...">
-						<span class="input-group-btn">
-							<button class="btn btn-default" type="submit">Buscar</button>
-						</span>
-					</div>
-						</div>
+						
 						<div class="table-container">
 							<table class="table table-filter">
                                                             <c:forEach var="u" items="${usuarios}">
@@ -48,7 +41,7 @@
 													<img src="http://www.prevenciondelaviolencia.org/sites/all/themes/pcc/images/user.png" class="media-photo">
 												</a>
 												<div class="media-body">
-													<span class="media-meta pull-right">Octubre 20 2017</span>
+													<span class="media-meta pull-right">Compatible en un ${compatibilidad.get(usuarios.indexOf(u)) * 100}%</span>
 													<h4 class="title">
 														${u.getVarNombre()}
 													</h4>
