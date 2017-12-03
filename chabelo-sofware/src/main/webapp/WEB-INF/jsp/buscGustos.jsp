@@ -73,33 +73,39 @@ height: 110%;
     </head>
 
 <body>
-
+    <script>
+    var m = ${m};
+    var p = ${p};
+    var j = ${j};
+    var l = ${l};
+    var d = ${d};
+    </script>
 
 <ul>
-<li>
-     <ul class="demo-1 effect">
-        <li>
-            <h2>Música</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+    <li id="Musica" onclick="loadMusica()">
+        <ul class="demo-1 effect">
+            <li>
+                <h2>Música</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
             
-        </li>
+            </li>
         
-        <li><img class="top" src="img/Musica.png" alt=""/></li>
-    </ul>
-</li>
+            <li><img class="top" src="img/Musica.png" alt=""/></li>
+        </ul>
+    </li>
 
 
-<li>
+<li id="Libros" onclick="loadLibros()">
      <ul class="demo-1 effect" >
         <li>
             <h2>Libros</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
         </li>
         
-        <li><img id="libros" class="top" action="/chabelo-sofware/sesion/buscCine" src="img/libros.jpg" alt=""/></li>
+        <li><img id="libros" class="top" src="img/libros.jpg" alt=""/></li>
     </ul>
 </li>
-<li>
+<li id="Cine" onclick="loadCine()">
      <ul class="demo-1 effect">
         <li>
             <h2>Películas/Series</h2>
@@ -109,7 +115,7 @@ height: 110%;
         <li><img id="libros" class="top" src="img/peliculas.jpg" alt=""/></li>
     </ul>
 </li>
-<li>
+<li id="Juegos" onclick="loadJuegos()">
      <ul class="demo-1 effect">
         <li>
             <h2>Videojuegos</h2>
@@ -122,7 +128,7 @@ height: 110%;
 
 
 
-<li>
+<li id="Deportes" onclick="loadDeportes()">
      <ul class="demo-1 effect">
         <li>
             <h2>Deportes</h2>
@@ -134,22 +140,8 @@ height: 110%;
 </li>
 
 </ul>
-
-    <form action="/chabelo-sofware/sesion/buscMusica">
-                <button class="btn btn-primary btn-xl" >Música</button>
-    </form>
-    <form action="/chabelo-sofware/sesion/buscJuegos">
-                <button class="btn btn-primary btn-xl" >Videojuegos</button>
-    </form>
-    <form action="/chabelo-sofware/sesion/buscLibros">
-                <button class="btn btn-primary btn-xl" >Libros</button>
-    </form>
-    <form action="/chabelo-sofware/sesion/buscCine">
-                <button class="btn btn-primary btn-xl" >Pelicuas</button>
-    </form>
-    <form action="/chabelo-sofware/sesion/buscDeportes">
-                <button class="btn btn-primary btn-xl" >Deportes</button>
-    </form>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/buscGustos.js"></script>
     
 </body>
 </html>
