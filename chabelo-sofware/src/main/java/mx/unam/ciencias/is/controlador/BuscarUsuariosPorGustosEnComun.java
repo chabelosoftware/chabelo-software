@@ -95,8 +95,11 @@ public class BuscarUsuariosPorGustosEnComun {
         List<Double> percentage;
         users = new LinkedList<>();
         percentage = new LinkedList<>();
-        for(Gustos g: gustos)
+        for(Gustos g: gustos){
+            if(g.getVarNombre_Usuario().getVarNombre_Usuario().equals(u))
+                continue;
             users.add(g.getVarNombre_Usuario());
+        }
         
         for(Usuario us:users)
             percentage.add(compatibilidad(usuario,us));
@@ -124,10 +127,20 @@ public class BuscarUsuariosPorGustosEnComun {
         List<Gustos> gustos = gustos_db.getGustosPorNombre("Juegos");
         List<Usuario> users;
         users = new LinkedList<>();
+        
         for(Gustos g: gustos){
+            if(g.getVarNombre_Usuario().getVarNombre_Usuario().equals(u))
+                continue;
             users.add(g.getVarNombre_Usuario());
         }
-          
+        
+        List<Double> percentage;
+        percentage = new LinkedList<>();
+        
+        for(Usuario us:users)
+            percentage.add(compatibilidad(usuario,us));
+        
+        model.addAttribute("compatibilidad", percentage); 
         model.addAttribute("usuarios", users);
         
         return new ModelAndView("resultadobusqueda",model);
@@ -152,9 +165,20 @@ public class BuscarUsuariosPorGustosEnComun {
         List<Usuario> users;
         users = new LinkedList<>();
         for(Gustos g: gustos){
+            if(g.getVarNombre_Usuario().getVarNombre_Usuario().equals(u))
+                continue;
             users.add(g.getVarNombre_Usuario());
         }
-          
+        
+        List<Double> percentage;
+        percentage = new LinkedList<>();
+        
+        for(Usuario us:users)
+            percentage.add(compatibilidad(usuario,us));
+        
+        model.addAttribute("compatibilidad", percentage); 
+        
+        
         model.addAttribute("usuarios", users);
         
         return new ModelAndView("resultadobusqueda",model);
@@ -179,9 +203,20 @@ public class BuscarUsuariosPorGustosEnComun {
         List<Usuario> users;
         users = new LinkedList<>();
         for(Gustos g: gustos){
+            if(g.getVarNombre_Usuario().getVarNombre_Usuario().equals(u))
+                continue;
             users.add(g.getVarNombre_Usuario());
         }
-          
+        
+        List<Double> percentage;
+        percentage = new LinkedList<>();
+        
+        for(Usuario us:users)
+            percentage.add(compatibilidad(usuario,us));
+        
+        model.addAttribute("compatibilidad", percentage); 
+        
+        
         model.addAttribute("usuarios", users);
         
         return new ModelAndView("resultadobusqueda",model);
@@ -206,9 +241,19 @@ public class BuscarUsuariosPorGustosEnComun {
         List<Usuario> users;
         users = new LinkedList<>();
         for(Gustos g: gustos){
+            if(g.getVarNombre_Usuario().getVarNombre_Usuario().equals(u))
+                continue;
             users.add(g.getVarNombre_Usuario());
         }
-          
+        
+        List<Double> percentage;
+        percentage = new LinkedList<>();
+        
+        for(Usuario us:users)
+            percentage.add(compatibilidad(usuario,us));
+        
+        model.addAttribute("compatibilidad", percentage); 
+        
         model.addAttribute("usuarios", users);
         
         return new ModelAndView("resultadobusqueda",model);

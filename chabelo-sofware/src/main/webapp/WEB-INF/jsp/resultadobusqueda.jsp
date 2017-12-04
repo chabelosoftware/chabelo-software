@@ -27,7 +27,11 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						
+                                            <c:choose>
+                                                <c:when test="${empty usuarios}">
+                                                    <h1>No se encontró ningún usuario :(</h1>
+                                                </c:when>
+                                                <c:otherwise>
 						<div class="table-container">
 							<table class="table table-filter">
                                                             <c:forEach var="u" items="${usuarios}">
@@ -62,6 +66,8 @@
                                                             </c:forEach>
 							</table>
 						</div>
+                                                </c:otherwise>
+                                            </c:choose>
 					</div>
 				</div>
 				<div class="content-footer">
