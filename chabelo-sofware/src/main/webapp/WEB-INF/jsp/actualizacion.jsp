@@ -23,7 +23,7 @@
       <div class="container">
 <div class="col-md-5">
     <div class="form-area">  
-        <form action="/chabelo-sofware/actualizarUsuario" method="POST">
+        <form action="/chabelo-sofware/sesion/actualizarUsuario" method="POST">
         <br style="clear:both">
                     <h3 style="margin-bottom: 25px; text-align: center;">Actualiza tus datos</h3>
     			
