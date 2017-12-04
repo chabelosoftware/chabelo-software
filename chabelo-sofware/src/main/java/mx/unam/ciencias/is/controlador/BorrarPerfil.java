@@ -51,7 +51,7 @@ public class BorrarPerfil {
         }
         
         Usuario_db.eliminar(us);
-        return "redirect:logout";
+        return "redirect:/logout";
     }
     
     @RequestMapping(value="/sesion/cancelarEliminar", method = RequestMethod.GET)

@@ -45,7 +45,7 @@
    <input type="checkbox" class="radio-btn" name="choise5" id="e-opt" />
    <label for="e-opt" class="label">Deportes</label>
   </li>
-  <input type="hidden" name="username" value=${username}>
+  <input type="hidden" name="username" value="${username}">
   <li>
       <input type="submit" value="Enviar">
   </li>
