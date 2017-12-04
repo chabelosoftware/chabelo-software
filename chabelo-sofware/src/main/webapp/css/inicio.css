@@ -26,7 +26,7 @@ and open the template in the editor.
 body {
   font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
   color: #D42222;
-  background: #D42222;
+  background-color: #F05F40;
 }
 
 #titulo {
@@ -44,7 +44,11 @@ body {
 
 .logo{
     margin-bottom: 10px;
+    
+   
 }
+
+
 
 .login, .register {
   display:inline-block;
@@ -120,6 +124,11 @@ body {
 
 .login p.submit, .register p.submit {
   text-align: right;
+}
+
+.login img {
+    width: 100px;
+    display: none;
 }
 
 

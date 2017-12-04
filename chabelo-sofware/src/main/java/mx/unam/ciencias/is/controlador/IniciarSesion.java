@@ -60,6 +60,8 @@ public class IniciarSesion{
         List<String> gustosLista = new LinkedList<>();
         model.addAttribute("username", u);
         model.addAttribute("nombre", usuario.getVarNombre());
+        model.addAttribute("apellidoP", usuario.getVarAPaterno());
+        model.addAttribute("apellidoM", usuario.getVarAMaterno());
         model.addAttribute("correo", usuario.getVarE_Mail());
         
         for(Gustos g :gustos){

@@ -10,11 +10,11 @@
         <link rel="stylesheet">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
        <link rel="stylesheet" type="text/css" href="<c:url value="/css/chatGeneral.css"/> ">
-
-              
+    
         <title>Lista de chats</title>
     </head>
 <body>    
+    
 <script src="https://use.fontawesome.com/45e03a14ce.js"></script>
 <div class="main_section">
    <div class="container">
@@ -65,6 +65,8 @@
 		 
       </div>
    </div>
+    <div>
+        <img style="width:25%; float: right;" src= "img/logo2.png">    </div>
 </div>
 </body>
 </html>

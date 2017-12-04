@@ -22,7 +22,7 @@
     <div id="content">
         <h id="titulo">¡Bienvenido a Friend Zone!</h>
   <div class="login">
-      <h><img class="logo" src="http://www.fillmurray.com/320/310"></h>
+      <h><img style="width:100%; margin: 0 auto;" src= "img/logo2.png"></h>
     <h1>Iniciar Sesión</h1>
     <form action="/chabelo-sofware/login" method="POST" class="login-form">
       <p><input type="text" name="username" value="" placeholder="Nombre de usuario"></p>

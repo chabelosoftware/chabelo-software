@@ -51,9 +51,12 @@
     <header class="masthead">
       <div class="header-content">
         <div class="header-content-inner">
+            <h><img style="width:10%; float: left;" src= "img/logo2.png"></h>
           <h1 id="homeHeading">Bienvenido a Friend Zone ${username}</h1>
           <hr>
           <p>Tu Nombre: ${nombre} </p>
+          <p>Tu Apellido Paterno: ${apellidoP} </p>
+          <p>Tu Apellido Materno: ${apellidoM} </p>
           <p>Tu Correo: ${correo}</p>
           <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Encuentra más ;)</a>
         </div>

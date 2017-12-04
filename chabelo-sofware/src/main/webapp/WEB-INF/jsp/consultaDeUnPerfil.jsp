@@ -54,6 +54,7 @@
     <header class="masthead">
       <div class="header-content">
         <div class="header-content-inner">
+            <h><img style="width:10%; float: left;" src= "img/logo2.png"></h>
           <h1 id="homeHeading">Este es ${username}</h1>
           <hr>
           <p>Nombre: ${nombre} </p>

@@ -86,7 +86,7 @@ height: 110%;
         <ul class="demo-1 effect">
             <li>
                 <h2>Música</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+                <p>¡Busca personas con tus mismos gustos musicales! Desde rock clasico hasta los mas nuevo en el mundo pop</p>
             
             </li>
         
@@ -99,7 +99,7 @@ height: 110%;
      <ul class="demo-1 effect" >
         <li>
             <h2>Libros</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+            <p>¡Busca personas con tus mismos gustos literarios y comparte tus ideas!</p>
         </li>
         
         <li><img id="libros" class="top" src="img/libros.jpg" alt=""/></li>
@@ -109,7 +109,7 @@ height: 110%;
      <ul class="demo-1 effect">
         <li>
             <h2>Películas/Series</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+            <p>¡Busca personas igual de adictas al cine como tu! Comenta y comparte con personas de otros paises</p>
         </li>
         
         <li><img id="libros" class="top" src="img/peliculas.jpg" alt=""/></li>
@@ -119,7 +119,7 @@ height: 110%;
      <ul class="demo-1 effect">
         <li>
             <h2>Videojuegos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+            <p>¡Busca personas con tus mismos gustos en el mundo de los videojuegos y platica acerca de ellos!</p>
         </li>
         
         <li><img id="libros" class="top" src="img/videojuegos.jpg" alt=""/></li>
@@ -132,7 +132,7 @@ height: 110%;
      <ul class="demo-1 effect">
         <li>
             <h2>Deportes</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+            <p>¡Busca personas y comparte tus experiencias en deportes! Desde la natacion hasta ¡Tenis de Mesa! </p>
         </li>
         
         <li><img class="top" src="img/deportes.jpg" alt=""/></li>
