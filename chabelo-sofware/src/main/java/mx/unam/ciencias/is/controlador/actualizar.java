@@ -33,7 +33,7 @@ public class actualizar {
     @Autowired
     GustosDAO Gustos_db;
     
-    @RequestMapping(value="/actualizarP", method = RequestMethod.GET)
+    @RequestMapping(value="/sesion/actualizarP", method = RequestMethod.GET)
     public ModelAndView confirmacion(HttpServletRequest request, Principal principal,ModelMap model){
         String usuario = principal.getName();
         Usuario us = Usuario_db.getUsuario(usuario);
@@ -76,7 +76,7 @@ public class actualizar {
         return new ModelAndView("actualizacion",model);
     }
     
-    @RequestMapping(value="/actualizarUsuario", method = RequestMethod.POST)
+    @RequestMapping(value="/sesion/actualizarUsuario", method = RequestMethod.POST)
     public String actualizaUsuario(HttpServletRequest request, Principal principal){
         String usuario = principal.getName();
         

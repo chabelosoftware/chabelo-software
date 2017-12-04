@@ -15,6 +15,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Login Form</title>
   <link rel="stylesheet" href="css/inicio.css">
+  <script src="js/registrarse.js"></script>
+
   <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
   <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -27,7 +29,7 @@
     <form action="/chabelo-sofware/login" method="POST" class="login-form">
       <p><input type="text" name="username" value="" placeholder="Nombre de usuario"></p>
       <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
-     <input name = "fallo" id="fallo" onlyread value ="<%= request.getParameter("error") %>" style="display:none;"/>
+     <input name = "fallo" id="fallo" onlyread value ="<%= request.getParameter("username") %>" style="display:none;"/>
       <p id="message" syle="color:red;"></p>
       
       <p class="submit"><input type="submit" name="commit" value="Inicia Sesión"></p>
@@ -51,17 +53,22 @@ function myFunction() {
   </div>
   <div class="register">
     <h1>¡Registrate Ahora!</h1>
-    <form action="/chabelo-sofware/crearUsuario" method="POST">
+    <form action="/chabelo-sofware/crearUsuario" method="POST" name="form1">
       <p><input type="text" name="nombre" value="" placeholder="Nombre"></p>
       <p><input type="text" name="apellidoP" value="" placeholder="Apellido Paterno"></p>
       <p><input type="text" name="apellidoM" value="" placeholder="Apellido Materno"></p>
-      <p><input type="text" name="username" value="" placeholder="Nombre de usuario"></p>
+      <p><input type="text" name="username" id="username" placeholder="Nombre de usuario"></p>
       <p><input type="text" name="email" value="" placeholder="Correo" type="email"></p>
       <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
       <p><input type="password" name="passworConf" value="" placeholder="Confirma Contraseña"></p>
+      <input name = "fallo1" id="fallo1" onlyread value ="<%=request.getParameter("error") %>" style="display:none;"/>
+      <p id="error-user" syle="color:white"></p>
+      <p id="error-mail" syle="color:white"></p>
+      <p id="error-pass" syle="color:white"></p>
+      <p id="message" syle="color:white;"></p>
       
       
-      <p class="submit"><input type="submit" name="commit" value="Registrarse"></p>
+      <p class="submit"><input type="submit" name="commit" value="Registrarse" onclick="validarFormularios()"></p>
     </form>
   </div>
     </div>
