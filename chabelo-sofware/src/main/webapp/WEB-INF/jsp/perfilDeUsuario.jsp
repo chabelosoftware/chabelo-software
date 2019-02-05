@@ -134,7 +134,7 @@
               </form>
           </div>
           <div class="col-lg-4 col-sm-6 text-center links">
-              <form action="/chabelo-sofware/actualizarP" >
+              <form action="/chabelo-sofware/sesion/actualizarP" >
             <button class="btn btn-primary btn-xl" style="color: white; margin: 10px;">Actualizar</button>
               </form>
           </div>
